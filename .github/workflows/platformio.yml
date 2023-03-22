@@ -27,6 +27,11 @@ jobs:
         run: |
           pio run -e esp32dev
           mv .pio/build/esp32dev/firmware.bin mitsubishi2MQTT_esp32dev.bin
+      
+      - name: Build esp32s3box
+        run: |
+          pio run -e esp32s3box
+          mv .pio/build/esp32s3box/firmware.bin mitsubishi2MQTT_esp32s3box.bin
 
       - name: Upload esp32dev artifacts
         uses: actions/upload-artifact@v2
